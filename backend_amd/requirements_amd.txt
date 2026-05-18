@@ -1,0 +1,13 @@
+# backend_amd/requirements_amd.txt
+# AMD perception node — Whisper transcription via ROCm PyTorch.
+#
+# CRITICAL: Do NOT add torch/torchvision/torchaudio here.
+# The ROCm base image already has the correct AMD build of PyTorch.
+# Installing from PyPI would pull the CUDA build and silently break GPU access.
+
+fastapi==0.111.1
+uvicorn[standard]==0.30.1
+python-multipart==0.0.9
+openai-whisper==20231117
+Pillow==10.4.0
+python-dotenv==1.0.1

@@ -1,0 +1,34 @@
+# backend_vultr/requirements_vultr.txt
+# Vultr orchestrator — standard PyPI install, NO GPU, NO torch required.
+# Whisper runs on the AMD node; this service calls it over HTTP.
+
+# --- Web framework ---
+fastapi==0.111.1
+uvicorn[standard]==0.30.1
+python-multipart==0.0.9
+
+# --- AI Agent ---
+langchain==0.2.6
+langchain-google-genai==1.0.7
+langgraph==0.1.14
+
+# --- Gemini ---
+google-generativeai==0.7.2
+
+# --- Quantum ---
+qiskit==1.1.1
+qiskit-ibm-runtime==0.25.0
+qiskit-aer==0.14.2
+
+# --- HTTP client (calls AMD node + external APIs) ---
+httpx==0.27.0
+
+# --- Data ---
+numpy==1.26.4
+scipy==1.13.1
+Pillow==10.4.0
+
+# --- Config & validation ---
+pydantic==2.8.2
+pydantic-settings==2.3.4
+python-dotenv==1.0.1

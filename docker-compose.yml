@@ -1,0 +1,65 @@
+# docker-compose.yml — save at project root q-optima/
+# Keys come from backend_vultr/.env — never hardcoded here
+#
+# RUN ONLY if needed:
+#   docker compose up orchestrator        ← orchestrator only (saves data)
+#   docker compose up --build orchestrator
+#
+# For local dev WITHOUT docker just use:
+#   uvicorn main:app --reload --port 8000
+
+version: "3.9"
+
+services:
+
+  orchestrator:
+    build:
+      context: ./backend_vultr
+      dockerfile: Dockerfile
+    container_name: q-optima-orchestrator
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./backend_vultr/.env            # all keys come from here
+    networks:
+      - q-optima-net
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 25s
+
+  perception:
+    build:
+      context: ./backend_amd
+      dockerfile: Dockerfile
+      args:
+        WHISPER_MODEL: base
+    container_name: q-optima-perception
+    restart: unless-stopped
+    ports:
+      - "8001:8001"
+    env_file:
+      - ./backend_amd/.env              # whisper config only
+    devices:
+      - /dev/kfd:/dev/kfd
+      - /dev/dri:/dev/dri
+    group_add:
+      - render
+      - video
+    security_opt:
+      - seccomp:unconfined
+    networks:
+      - q-optima-net
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8001/api/health"]
+      interval: 30s
+      timeout: 15s
+      retries: 3
+      start_period: 60s
+
+networks:
+  q-optima-net:
+    driver: bridge
