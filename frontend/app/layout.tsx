@@ -7,6 +7,7 @@
 
 import type { Metadata } from "next";
 import { Space_Mono, Sora } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 // ─── Fonts ──────────────────────────────────────────────────────────────────
@@ -54,6 +55,7 @@ export default function RootLayout({
     >
       <body style={{ fontFamily: "var(--font-sans)" }}>
         {children}
+        <Analytics />
       </body>
     </html>
   );
