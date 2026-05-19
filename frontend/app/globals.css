@@ -1,0 +1,70 @@
+/* frontend/app/globals.css */
+
+:root {
+  --bg-base:        #050608;
+  --bg-panel:       #0a0c10;
+  --bg-elevated:    #0f1218;
+  --bg-hover:       #141820;
+
+  --border-subtle:  #1a1f2e;
+  --border-default: #232a3a;
+  --border-accent:  #00c8ff40;
+
+  --cyan:           #00c8ff;
+  --cyan-dim:       #00c8ff22;
+
+  --violet:         #a855f7;
+  --violet-dim:     #a855f722;
+
+  --amber:          #f59e0b;
+  --amber-dim:      #f59e0b22;
+
+  --green:          #22d3a0;
+  --green-dim:      #22d3a020;
+
+  --red:            #f43f5e;
+  --red-dim:        #f43f5e20;
+
+  --text-primary:   #e8eaf0;
+  --text-secondary: #6b7591;
+  --text-muted:     #3d4560;
+
+  --grid-line:      #ffffff06;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100dvh;
+  overflow-x: hidden;
+}
+
+/* Thin themed scrollbar */
+::-webkit-scrollbar       { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg-base); }
+::-webkit-scrollbar-thumb { background: var(--border-default); border-radius: 2px; }
+
+/* Text selection */
+::selection {
+  background: var(--cyan-dim);
+  color: var(--cyan);
+}
+
+/* Utility classes consumed by child components */
+.mono { font-family: var(--font-mono); }
+
+.glow-cyan   { color: var(--cyan);   text-shadow: 0 0 12px var(--cyan); }
+.glow-violet { color: var(--violet); text-shadow: 0 0 12px var(--violet); }
