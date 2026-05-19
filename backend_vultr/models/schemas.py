@@ -1,4 +1,3 @@
-# backend/models/schemas.py
 # Pydantic v2 request / response models for Q-Optima API.
 # All data crossing the HTTP boundary is validated here.
 

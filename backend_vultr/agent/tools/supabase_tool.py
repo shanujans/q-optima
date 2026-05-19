@@ -1,32 +1,6 @@
-# backend_vultr/agent/tools/supabase_tool.py
-# ENHANCEMENT 6 — Supabase job history + analytics
-# Free tier: 500 MB database, unlimited API calls.
-# Setup: https://supabase.com → new project → copy URL + anon key
-#
+# Supabase job history + analytics
 # SQL to run in Supabase dashboard (SQL editor):
-# -----------------------------------------------
-# CREATE TABLE jobs (
-#   id              TEXT PRIMARY KEY,
-#   created_at      TIMESTAMPTZ DEFAULT NOW(),
-#   status          TEXT,
-#   city_names      JSONB,
-#   optimal_route   JSONB,
-#   quantum_distance FLOAT,
-#   classical_distance FLOAT,
-#   improvement_pct  FLOAT,
-#   carbon_kg        FLOAT,
-#   quantum_backend  TEXT,
-#   num_qubits       INT,
-#   qaoa_layers      INT,
-#   total_shots      INT,
-#   weather_summary  TEXT,
-#   human_readable_result TEXT
-# );
-# -----------------------------------------------
-#
-# ENV VARS:
-#   SUPABASE_URL       — https://xxxx.supabase.co
-#   SUPABASE_ANON_KEY  — from project settings → API
+
 
 from __future__ import annotations
 import logging, os

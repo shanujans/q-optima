@@ -1,4 +1,3 @@
-# backend_vultr/Dockerfile
 # Lightweight Python 3.11 orchestrator — no GPU needed.
 
 FROM python:3.11-slim AS builder

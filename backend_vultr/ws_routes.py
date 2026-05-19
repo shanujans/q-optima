@@ -1,13 +1,5 @@
-# backend_vultr/ws_routes.py
-# ENHANCEMENT 5 — WebSocket routes
+# WebSocket routes
 # Two WebSocket endpoints to add to main.py:
-#
-#   /ws/status/{job_id}     — real-time job step updates (replaces polling)
-#   /ws/transcribe          — real-time Speechmatics RT transcription proxy
-#
-# HOW TO ADD TO main.py:
-#   from ws_routes import add_websocket_routes
-#   add_websocket_routes(app, _job_registry)
 
 from __future__ import annotations
 

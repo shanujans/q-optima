@@ -1,5 +1,3 @@
-# backend_vultr/agent/nodes/whisper_node.py
-# Vultr orchestrator — does NOT import whisper locally.
 # Calls the AMD perception node over HTTP via AMD_WHISPER_URL.
 # Falls back gracefully if no audio or no AMD URL configured.
 

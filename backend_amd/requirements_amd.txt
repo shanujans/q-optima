@@ -1,4 +1,3 @@
-# backend_amd/requirements_amd.txt
 # AMD perception node — Whisper transcription via ROCm PyTorch.
 #
 # CRITICAL: Do NOT add torch/torchvision/torchaudio here.

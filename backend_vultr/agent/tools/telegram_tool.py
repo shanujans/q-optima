@@ -1,7 +1,4 @@
-# backend_vultr/agent/tools/telegram_tool.py
 # Telegram Bot API — fires dispatch alert at end of pipeline.
-# Setup: @BotFather → /newbot → copy token.
-# Get chat_id: curl "https://api.telegram.org/bot<TOKEN>/getUpdates"
 
 from __future__ import annotations
 import asyncio, logging, os

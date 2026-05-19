@@ -1,5 +1,3 @@
-# backend_vultr/agent/nodes/whisper_node.py
-# NO local whisper import. NO _get_model. HTTP call to AMD only.
 # Vultr orchestrator delegates transcription to AMD perception node.
 
 from __future__ import annotations

@@ -1,25 +1,8 @@
-# backend/utils/qubo_parser.py
 # Two responsibilities:
 #   1. build_tsp_qubo()  — converts a distance matrix into an upper-triangular
 #      QUBO matrix suitable for QAOA / VQE.
 #   2. parse_bitstring() — decodes a quantum measurement bitstring back into a
 #      human-readable route and computes the total distance.
-#
-# Mathematical background
-# -----------------------
-# TSP QUBO encoding (n cities, n² binary variables x_{city, position}):
-#
-#   Constraint A  (each city visited exactly once):
-#       A · Σ_city  (1 - Σ_pos  x_{city,pos})²
-#
-#   Constraint B  (each position filled by exactly one city):
-#       A · Σ_pos   (1 - Σ_city x_{city,pos})²
-#
-#   Objective     (minimise total route distance, cyclic):
-#       Σ_pos Σ_{i≠j} dist[i][j] · x_{i,pos} · x_{j,(pos+1) mod n}
-#
-# The penalty A must satisfy  A > n · max(dist)  to ensure constraint
-# violations always cost more than any feasible route improvement.
 
 from __future__ import annotations
 

@@ -1,8 +1,6 @@
-# backend_vultr/utils/classical_comparison.py
-# ENHANCEMENT 4 — Classical vs Quantum comparison
+# Classical vs Quantum comparison
 # Runs a nearest-neighbour TSP heuristic on the same distance matrix.
 # Shows percentage improvement of quantum over classical in the result card.
-# Judges need a concrete number: "Quantum found a route 18% shorter."
 
 from __future__ import annotations
 import logging

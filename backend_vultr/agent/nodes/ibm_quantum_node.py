@@ -1,6 +1,3 @@
-# backend/agent/nodes/ibm_quantum_node.py
-# LangGraph nodes — Steps 5 & 6: Quantum execution + result parsing
-#
 # Execution strategy (automatic):
 #   1. If IBM_QUANTUM_TOKEN is set AND n_qubits ≤ IBM_MAX_QUBITS (default 20):
 #      Submit to the least-busy real IBM Quantum backend.

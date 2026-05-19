@@ -1,8 +1,3 @@
-# backend_vultr/agent/tools/osrm_tool.py
-# ENHANCEMENT 2 — OSRM real road distances (zero cost, no key)
-# Replaces Gemini's visual distance estimates with actual driving distances.
-# Public API: router.project-osrm.org (free, no rate limit for demo use)
-
 from __future__ import annotations
 import asyncio, logging
 from typing import Any, Dict, List, Tuple

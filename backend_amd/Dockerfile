@@ -1,7 +1,5 @@
-# backend_amd/Dockerfile
 # AMD GPU perception node.
 # Base: official ROCm PyTorch — gives HIP-enabled torch without reinstalling.
-# NEVER run pip install torch inside here — it pulls the CUDA build from PyPI.
 
 FROM rocm/pytorch:rocm6.1_ubuntu22.04_py3.10_pytorch_2.1.2
 

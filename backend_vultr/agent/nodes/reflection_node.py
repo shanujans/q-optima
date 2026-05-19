@@ -1,7 +1,3 @@
-# backend_vultr/agent/nodes/reflection_node.py
-# ENHANCEMENT 3 — Agent self-reflection loop
-# This is the single most important node for winning "Intelligent Reasoning".
-#
 # After IBM Quantum returns results, this node autonomously decides:
 #   - Is the best bitstring a valid TSP permutation?
 #   - Is quantum confidence above threshold?

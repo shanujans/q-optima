@@ -1,4 +1,4 @@
-# backend_vultr/agent/graph.py — ENHANCED (all 7 upgrades wired)
+# ENHANCED (all 7 upgrades wired)
 from __future__ import annotations
 import logging, os
 from datetime import datetime, timezone

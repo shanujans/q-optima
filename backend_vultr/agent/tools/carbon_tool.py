@@ -1,6 +1,4 @@
-# backend_vultr/agent/tools/carbon_tool.py
 # Climatiq API — ESG carbon footprint per route segment.
-# Free tier: 1,000 req/month. Key: https://www.climatiq.io/signup
 
 from __future__ import annotations
 import asyncio, logging

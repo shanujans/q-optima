@@ -1,5 +1,3 @@
-# backend_vultr/agent/tools/weather_tool.py
-# Open-Meteo — zero cost, no API key.
 # Adds weather penalty to QUBO distance matrix.
 
 from __future__ import annotations

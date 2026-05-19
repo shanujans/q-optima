@@ -1,12 +1,6 @@
-# docker-compose.yml — save at project root q-optima/
-# Keys come from backend_vultr/.env — never hardcoded here
-#
 # RUN ONLY if needed:
 #   docker compose up orchestrator        ← orchestrator only (saves data)
 #   docker compose up --build orchestrator
-#
-# For local dev WITHOUT docker just use:
-#   uvicorn main:app --reload --port 8000
 
 version: "3.9"
 

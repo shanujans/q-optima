@@ -1,6 +1,4 @@
-# backend_vultr/agent/tools/traffic_tool.py
 # TomTom Traffic Flow API — real-time congestion penalties.
-# Free tier: 2,500 req/day. Key: https://developer.tomtom.com/
 
 from __future__ import annotations
 import asyncio, logging, math

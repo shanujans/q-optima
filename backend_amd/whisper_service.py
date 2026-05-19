@@ -1,9 +1,4 @@
-# backend_amd/whisper_service.py
 # Standalone FastAPI service — AMD Perception Node.
-# Exposes two endpoints:
-#   GET  /api/health      → liveness probe
-#   POST /api/transcribe  → accepts audio file, returns transcribed text
-#
 # The Vultr orchestrator calls this service via the Cloudflare Tunnel URL
 # set in AMD_WHISPER_URL env var.
 

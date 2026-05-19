@@ -1,4 +1,3 @@
-# backend_vultr/requirements_vultr.txt
 # Vultr orchestrator — standard PyPI install, NO GPU, NO torch required.
 # Whisper runs on the AMD node; this service calls it over HTTP.
 

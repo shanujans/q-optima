@@ -1,15 +1,3 @@
-# backend/agent/nodes/gemini_node.py
-# LangGraph node — Step 2: Gemini 1.5 Pro Vision analysis
-#
-# Takes the uploaded image + transcribed instruction and returns a structured
-# JSON with city names and a distance matrix — the raw material for QUBO.
-#
-# Why not ask Gemini to build the QUBO directly?
-# QUBO construction requires precise algebraic manipulation; hallucinated
-# coefficients would silently corrupt the quantum result.  We let Gemini do
-# what it's great at (visual understanding + structured extraction) and handle
-# the math ourselves in qubo_parser.py.
-
 from __future__ import annotations
 
 import json
@@ -122,11 +110,11 @@ def _validate_and_fix(data: Dict[str, Any]) -> Dict[str, Any]:
 
     if n < 2:
         raise ValueError(f"Need at least 2 cities, got {n}.")
-    if n > 7:
-        logger.warning("Gemini returned %d cities; capping at 6 for qubit budget.", n)
-        cities = cities[:6]
-        n = 6
-        matrix = [row[:6] for row in matrix[:6]]
+    if n > 3:
+        logger.warning("Capping at 3 cities for performance.")
+        cities = cities[:3]
+        n = 3
+        matrix = [row[:3] for row in matrix[:3]]
 
     # Ensure symmetry and zero diagonal
     m = [[float(matrix[i][j]) for j in range(n)] for i in range(n)]

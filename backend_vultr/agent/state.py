@@ -1,4 +1,3 @@
-# backend/agent/state.py
 # LangGraph AgentState — the single mutable state object that flows through
 # every node in the StateGraph.  All fields are optional at construction;
 # nodes populate them progressively.

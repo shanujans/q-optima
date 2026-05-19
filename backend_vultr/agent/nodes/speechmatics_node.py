@@ -1,19 +1,8 @@
-# backend_vultr/agent/nodes/speechmatics_node.py
-# ENHANCEMENT 1 — Speechmatics STT (primary, replaces AMD Whisper)
-#
 # Two modes:
 #   BATCH  — uploaded audio file → POST /v2/jobs → poll → transcript
 #   RT     — live mic stream via WebSocket proxy (see main.py /ws/transcribe)
 #
 # Fallback chain:  Speechmatics → AMD Whisper node → default instruction
-#
-# Get your free $200 credit: https://portal.speechmatics.com/
-# Docs: https://docs.speechmatics.com/introduction/batch-guide
-#
-# ENV VARS:
-#   SPEECHMATICS_API_KEY   — from portal.speechmatics.com
-#   SPEECHMATICS_LANGUAGE  — default "en" (supports 50+ languages)
-#   AMD_WHISPER_URL         — fallback if Speechmatics key not set
 
 from __future__ import annotations
 

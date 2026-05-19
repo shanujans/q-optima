@@ -1,21 +1,3 @@
-# backend/agent/nodes/qiskit_node.py
-# LangGraph node — Steps 3 & 4: QUBO construction + Qiskit QAOA circuit
-#
-# This node:
-#   1. Calls build_tsp_qubo() to produce the upper-triangular QUBO matrix Q.
-#   2. Converts Q to a SparsePauliOp Ising Hamiltonian.
-#   3. Builds a QAOAAnsatz circuit and runs classical COBYLA optimisation
-#      using the local Aer simulator as the cost-function evaluator.
-#   4. Stores the optimal γ/β parameters and a display-ready Qiskit code
-#      string into state for the IBM execution node and the UI timeline.
-#
-# Qubit budget
-# ------------
-# n cities → n² qubits.  For n=3 → 9 qubits (runs on real IBM hardware).
-# For n=4 → 16 qubits (uses Aer; IBM free tier has queue constraints).
-# For n≥5 → always uses Aer; IBM free tier devices top out at ~127 qubits
-# but queue wait times are prohibitive for a live demo.
-
 from __future__ import annotations
 
 import logging
@@ -38,9 +20,9 @@ logger = logging.getLogger(__name__)
 
 # QAOA hyperparameters — tunable via env vars if desired
 QAOA_LAYERS  = 1         # p=1 sufficient for small TSP; increase for better quality
-COBYLA_ITER  = 150       # Max classical optimisation iterations
-SHOTS_OPTIM  = 1024      # Shots during optimisation (fast)
-SHOTS_FINAL  = 4096      # Shots for the final optimal-parameter sampling
+COBYLA_ITER  = 30       # Max classical optimisation iterations
+SHOTS_OPTIM  = 256      # Shots during optimisation (fast)
+SHOTS_FINAL  = 512      # Shots for the final optimal-parameter sampling
 
 
 # ---------------------------------------------------------------------------

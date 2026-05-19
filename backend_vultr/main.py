@@ -1,11 +1,5 @@
-# backend/main.py
 # Q-Optima FastAPI backend entry point
-#
-# Endpoints:
-#   POST /api/solve         — accept image + audio upload, return job_id
-#   GET  /api/status/{id}  — poll live job status (step logs + result)
-#   GET  /api/health        — liveness probe (Vercel / Cloudflare health checks)
-#
+
 # Architecture:
 #   - Multipart upload is received synchronously (fast).
 #   - The LangGraph agent runs in a ThreadPoolExecutor background task so the
