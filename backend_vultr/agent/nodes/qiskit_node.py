@@ -19,9 +19,11 @@ from utils.qubo_parser import build_tsp_qubo, evaluate_qubo
 
 logger = logging.getLogger(__name__)
 
-COBYLA_ITER = int(os.getenv("COBYLA_ITER", "30"))
-SHOTS_OPTIM = int(os.getenv("SHOTS_OPTIM", "256"))
-SHOTS_FINAL = int(os.getenv("SHOTS_FINAL", "512"))
+# QAOA hyperparameters — tunable via env vars if desired
+QAOA_LAYERS  = 1         # p=1 sufficient for small TSP; increase for better quality
+COBYLA_ITER  = 30       # Max classical optimisation iterations
+SHOTS_OPTIM  = 256      # Shots during optimisation (fast)
+SHOTS_FINAL  = 512      # Shots for the final optimal-parameter sampling
 
 
 # ---------------------------------------------------------------------------
